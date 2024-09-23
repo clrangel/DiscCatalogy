@@ -1,4 +1,4 @@
-namespace DiscCatalogy.Models
+namespace DiscCatalogy.Models.ViewModels
 {
     public class ErrorViewModel
     {

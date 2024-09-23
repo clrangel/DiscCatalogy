@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using DiscCatalogy.Models;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DiscCatalogyContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DiscCatalogyContext") ?? throw new InvalidOperationException("Connection string 'DiscCatalogyContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
